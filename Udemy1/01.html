@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery</title>
+    <style>
+        div {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        div p {
+            padding: 1rem;
+            margin: 1rem;
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 2rem;
+            background-color: skyblue;
+            color: #3c3c3c;
+        }
+
+        .formatoParrafo{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+            font-size: 1.5rem;
+            color: fuchsia;
+            border: solid 2px lime;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Sin Jquery</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique molestias harum provident!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae saepe aliquam suscipit!</p>
+    </div>
+
+    <div>
+        <div>
+            <h1>Con Jquery</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique molestias harum provident!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae saepe aliquam suscipit!</p>
+        </div>
+    </div>
+
+    <!-- agregando clases -->
+
+    <div>
+        <cite>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus ducimus blanditiis iure. Dolorem magni,
+            omnis quasi magnam debitis, officiis sapiente tenetur aspernatur dolor? Tenetur sint aspernatur, odit, laboriosam,
+            expedita libero, quidem blanditiis corporis facilis facere animi. Soluta aut, animi nemo quo vitae rem, vero
+            optio atque eveniet ad eaque officia assumenda! Earum ducimus, reprehenderit fugit perferendis expedita aliquid
+            velit enim excepturi voluptate reiciendis veniam alias nemo! Repellat adipisci exercitationem quod possimus nisi,
+            nam! Quos dicta, sequi aperiam sunt libero ad nemo doloribus quia cupiditate cumque hic nobis ducimus. Cum sequi
+            ducimus ipsum iste veniam quisquam reiciendis, dolore facilis qui.</cite>
+    </div>
+
+    <!-- scripts -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+        $(function () {
+            // alert("Hola mundo Jquery");
+            $('div div p').css('background-color', '#3c3c3c');
+            $('div div p').css('color', 'skyblue');
+
+            // agregando clases
+
+            $('div cite').addClass('formatoParrafo');
+
+        });
+    </script>
+</body>
+
+</html>
