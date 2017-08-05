@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cargar Jquery desde cualquier lugar de la Pagina</title>
+
+    <!-- cargando jquery -->
+    <script src="js/jquery-3.2.1.js"></script>
+
+    <!-- agregando script -->
+    <script>
+        //  Forma2
+        // var cambioColor = function(){
+        //     $('p').css('color', 'skyblue');
+        // }
+
+        // $(document).ready(cambioColor);
+
+        // Forma 1
+        // $(document).ready(function () {
+        //     $('p').css('color', 'green');
+        // });
+    </script>
+</head>
+
+<body>
+    <h2>Interacciones Sencillas con el DOM</h2>
+    <section>
+        <article>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eos, nostrum ullam porro dignissimos incidunt,
+                distinctio commodi enim error nam qui iusto delectus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus laudantium repellendus quisquam animi impedit
+                vitae minima consequatur, suscipit doloribus labore dignissimos, libero quos!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo commodi culpa error nostrum ad, ipsam esse, voluptate
+                ullam, pariatur nobis quaerat, obcaecati ab.</p>
+        </article>
+    </section>
+    <ol class="orden">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <ul>
+            <li class="uno">subItem1</li>
+            <li>subItem2</li>
+        </ul>
+    </ol>
+    <hr>
+    <script>
+        $(function () {
+            $('ol.ejercicio1').css('border', 'dashed 2px lime');
+        })
+    </script>
+    <h2>Ejercicio1:Poner un borde a la lista ordenada</h2>
+    <ol class="ejercicio1">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <ul>
+            <li class="uno">subItem1</li>
+            <li>subItem2</li>
+        </ul>
+    </ol>
+    <hr>
+
+    <h2>Ejercicio2:Poner un borde a los hijos de la lista ordenada</h2>
+    <script>
+        $(function () {
+            $('ol.ejercicio2').children('').css('border', 'solid 2px red');
+        })
+    </script>
+    <ol class="ejercicio2">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <ul>
+            <li class="uno">subItem1</li>
+            <li>subItem2</li>
+        </ul>
+    </ol>
+    <hr>
+    <h2>Ejercicio3:Poner un borde a los li de la lista ol</h2>
+    <script>
+        $(function () {
+            $('ol.ejercicio3').find('li').css('border', 'solid 2px blue')
+        })
+    </script>
+    <ol class="ejercicio3">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <ul>
+            <li class="uno">subItem1</li>
+            <li>subItem2</li>
+        </ul>
+    </ol>
+    <hr>
+    <h2>Ejercicio4:Poner un borde a los elementos li pares de la lista ordenada </h2>
+    <script>
+        $(function () {
+            var cantidad = $('ol.ejercicio4').find('li').length;
+            for (var index = 0; index <= cantidad; index += 2) {
+                $('ol.ejercicio4').find('li:eq(' + index + ')').next().css('border', 'solid 2px orange')
+            }
+
+        })
+    </script>
+    <ol class="ejercicio4">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <ul>
+            <li class="uno">subItem1</li>
+            <li>subItem2</li>
+        </ul>
+    </ol>
+    <hr>
+    <h2>Ejercicio5:Agregar un texto al segundo elemento de la lista desordenada</h2>
+    <script>
+        $(function () {
+            $('ol.ejercicio5').children('ul').find('li:eq(1)').css('border', 'solid 1px purple').text('He cambiado este Texto...')
+        })
+    </script>
+    <ol class="ejercicio5">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <ul>
+            <li>subItem1</li>
+            <li>subItem2</li>
+        </ul>
+    </ol>
+</body>
+
+</html>
