@@ -1,0 +1,58 @@
+body {
+
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li a:hover{
+    border-left: double 2px #3c3c3c;
+   padding: 1rem;
+}
+
+.menuJs li a:hover{
+    border: none;
+}
+.menuJs li:hover{
+    border-bottom: solid 1px #3c3c3c;
+}
+
+.menuProyectos li a:hover{
+    border: none;
+}
+.menuProyectos li:hover{
+    border-bottom: solid 1px #3c3c3c;
+}
+
+
+ul, li, a{
+    margin: 0; padding: 0;
+}
+
+a:any-link{
+    text-decoration: none;
+    color: #3c3c3c;
+}
+
+
+.bordes {
+    border: solid 1px red;
+}
+
+.menuPrincipal{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.menuJs, .menuProyectos{
+    display: none;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Optimizando el Codigo de eventos.html</title>
+
+    <!-- cargando jquery -->
+    <script src="js/jquery-3.2.1.js"></script>
+
+    <style>
+        .default {
+            font-family: sans-serif;
+            font-size: 1rem;
+            background-color: none;
+            color: black;
+        }
+
+        .estilo1 {
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+            font-size: 2rem;
+            background-color: skyblue;
+            color: #3c3c3c;
+        }
+
+        .estilo2 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: #3c3c3c;
+            color: fuchsia;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            var miBoton1 = $('button.btnEjercicio1')
+            var miBoton2 = $('button.btnEjercicio2')
+            miBoton1.on('click', function () {
+                $('article:eq(0)').find('p:eq(1)').addClass('estilo1');
+            })
+
+            miBoton2.bind({
+                mouseenter: function () {
+                    miBoton2.text('Estas encima Mio');
+                    $('article:eq(1)').children('p:eq(0)').addClass('estilo2')
+                },
+                mouseleave: function () {
+                    miBoton2.text('Ya me soltaste ..')
+                    $('article:eq(1)').children('p:eq(0)').removeAttr('style')
+                }
+            });
+        })
+    </script>
+
+</head>
+
+<body>
+    <h2>Cambie el segundo parrafo de background y fuente despues de hacer click en el botton</h2>
+    <section>
+        <article>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eos, nostrum ullam porro dignissimos incidunt,
+                distinctio commodi enim error nam qui iusto delectus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus laudantium repellendus quisquam animi impedit
+                vitae minima consequatur, suscipit doloribus labore dignissimos, libero quos!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo commodi culpa error nostrum ad, ipsam esse, voluptate
+                ullam, pariatur nobis quaerat, obcaecati ab.</p>
+        </article>
+        <button class="btnEjercicio1">Click</button>
+    </section>
+
+    <hr>
+
+    <h2>Cambie el Primer Parrafo y fuente despues de pasar el mouse sobre el boton, y borrar el estilo al retirar</h2>
+    <section>
+        <article>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse eos, nostrum ullam porro dignissimos incidunt,
+                distinctio commodi enim error nam qui iusto delectus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus laudantium repellendus quisquam animi impedit
+                vitae minima consequatur, suscipit doloribus labore dignissimos, libero quos!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo commodi culpa error nostrum ad, ipsam esse, voluptate
+                ullam, pariatur nobis quaerat, obcaecati ab.</p>
+        </article>
+        <button class="btnEjercicio2">Click</button>
+    </section>
+
+    <hr>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Optimizando el Codigo de eventos.html</title>
+
+    <!-- cargando jquery -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <!-- mis estilos -->
+    <link rel="stylesheet" type="text/css" href="estilos/estilosMenu.css">
+
+    <script>
+        $(function () {
+
+            $('ul li').css({
+                'margin-right':'5rem'
+            })
+
+            $('ul li:has(ul)').hover(
+                // Metodo Hover para handlerIn
+                function () {
+                    // $(this).find('ul').css({
+                    //     'display': 'block',
+                    //     'font-size': '1rem',
+                    // })
+
+                    $(this).find('ul').fadeToggle(1500)
+
+                    $(this).find('ul').children('li').css({
+                        'margin-top': '1rem',
+                        'padding':'0.5rem 0.5rem',
+                        'font-size': '2rem'
+                    })
+                },
+                // Metodo Hover para handlerOut
+                function () {
+                    // $(this).find('ul').css({
+                    //     display: 'none'
+                    // })
+                    $(this).find('ul').fadeOut(200);
+                }
+
+            );
+
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <ul class="menuPrincipal">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">JavaScript</a>
+            <ul class="menuJs">
+                <li><a href="#">jQuery</a></li>
+                <li><a href="#">Backbone.js</a></li>
+                <li><a href="#">Mootools</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Proyectos</a>
+            <ul class="menuProyectos">
+                <li><a href="#">Html5</a></li>
+                <li><a href="#">Juegos</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</body>
+
+</html>
