@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Trbaando con Animate en JQuery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- mis estilos -->
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 2rem;
+        }
+
+        .animado {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10rem;
+            width: 10rem;
+            margin: 1rem;
+            padding: 1rem;
+            border: dashed 3px fuchsia;
+            background-color: #3c3c3c;
+            color: fuchsia;
+        }
+
+        button{
+            height: 4rem; width: 17rem;
+            background-color: white;
+            border: 2px solid #3c3c3c;
+            padding: 1rem 1rem;
+
+            font-family: monospace;
+            color: fuchsia;
+            font-weight: bold;
+            font-size: 1.5rem;
+            
+            
+        }
+    </style>
+
+    <!-- importando JQuery -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <!-- mis scripts -->
+    <script>
+        $(document).ready(function(){
+            // ejercicio2
+            $('#Ejercicio1').on('click', function(){
+                $('.container').children('div').first().animate({
+                    'padding-top': '10rem'
+                })
+            })
+            // ejercicio2
+            $('#Ejercicio2').click(function(){
+                $('.container').find('div:eq(1)').animate({
+                    'font-size': '4rem'
+                })
+
+                $('div:animated').css({
+                    'background-color':'#ccc',
+                    'color':'skyblue',
+                    'border':'none'
+                })
+                
+            })
+
+            // ejercicio3
+            $('#Ejercicio3').click(function(){
+                $('div:not(div:animated)').animate({
+                    'padding-right':'5rem',
+                    'font-size':'3rem'
+                })
+                
+                
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="animado" id="primero">
+            <p>Div1</p>
+        </div>
+        <div class="animado">
+            <p>Div2</p>
+        </div>
+        <div class="animado">
+            <p>Div3</p>
+        </div>
+        <div class="animado">
+            <p>Div4</p>
+        </div>
+    </div>
+    <hr>
+    <button id="Ejercicio1" title="Al Hacer click animar el margen superior del primer Div" >Ejercicio1</button>
+    <button id="Ejercicio2" title="Buscar cualquier elemento animado en el DOM y cabiar el color del fondo" >Ejercicio2</button>
+    <button id="Ejercicio3" title= >Ejercicio3</button>
+</body>
+
+</html>
