@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Creando mis Metodos</title>
+    <!-- Mis estilos -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container div {
+            height: 10rem;
+            width: 10rem;
+            padding: 1rem;
+            margin: 1rem;
+            border: 5px solid pink;
+            background-color: #ccc;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1.5rem;
+            color: #3c3c3c;
+            text-align: center;
+        }
+
+        button {
+            height: 3rem;
+            width: 7rem;
+            background-color: #aaa;
+            border-radius: 1rem;
+        }
+    </style>
+    <!-- llamando JQuery -->
+    <script src="js/jquery-3.2.1.js"></script>
+
+    <!-- mis scripts -->
+    <script>
+        $(document).ready(function () {
+            var cuadro = $('div').children('div:eq(0)');
+            $.fn.animandoCuadro = function (speed, fn) {
+                // console.log('funciona...')
+                return $(this).animate({
+                    'height': '5rem',
+                    'width': '5rem',
+                    'font-size':'1rem'
+                },speed,fn)
+            }
+
+            $('.ejercicio1').on('click', function () {
+                cuadro.animandoCuadro(1500, function(){
+                    cuadro.text("")
+                    cuadro.append('Funciono')                   
+                });
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div>Animando con Callbacks</div>
+    </div>
+    <button class="ejercicio1">Da click para Animar</button>
+</body>
+
+</html>
