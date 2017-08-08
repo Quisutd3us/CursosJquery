@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Importando JQuery -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <!-- mis script -->
+    <script>
+        $(function () {
+            $('#ejercicio1').bind('click',function () {
+                $('*').removeAttr('style');
+                $('h1 + h2').css({
+                    'border': 'solid 1px red'
+                })
+            })
+
+            $('#ejercicio2').bind('click',function(){
+                $('*').removeAttr('style');
+                $('h1').siblings('h2').css({
+                    'border':'dashed 1px blue'
+                })
+            })
+
+            $('#ejercicio3').bind('click', function(){
+                $('*').removeAttr('style');
+                $('h1').siblings('h2, p').css({
+                    'background-color':'#3c3c3c',
+                    'color':'white'
+                })
+            })
+
+            $('#ejercicio4').bind('click',function(){
+                $('*').removeAttr('style');
+                $('li').each(function(){
+                    if ($(this).hasClass('elegido')) {
+                        $(this).nextAll('li,p').css({
+                            'background-color':'pink',
+                            'color': '#3c3c3c'
+                        })
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="contenido">
+        <h1>Primer Título H1</h1>
+        <h2>Segundo título H2</h2>
+        <p>Parrafo del DIV</p>
+        <h2>Otro elemento del tipo H2</h2>
+    </div>
+    <ul>
+        <li>1 elemento</li>
+        <li>2 elemento</li>
+        <li class="elegido">3 elemento y tengo la clase=elegido</li>
+        <li>4 elemento</li>
+        <li>5 elemento</li>
+        <li>6 elemento</li>
+        <p>Yo soy un 'p' </p>
+    </ul>
+    <button id="ejercicio1">Seleccionar el primer hermano adyacente H2 de H1 </button>
+    <button id="ejercicio2">Seleccionar todos los hermanos H2 de H1 </button>
+    <button id="ejercicio3">Seleccionar todos los hermanos de H1 </button>
+    <button id="ejercicio4">Seleccionar los elementos que esten debajo del li con clase: elegido </button>
+
+</body>
+
+</html>
