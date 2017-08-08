@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clonacion</title>
+
+    <!-- cargando jquery -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <!-- mis scripts -->
+    <script>
+        $(function(){
+            $('.contenedor').delegate('h1','click',function(){
+                $(this).clone().appendTo('.contendor2');
+            })
+
+            $('.contendor2').delegate('h1', 'click', function(){
+                $(this).clone().appendTo('.contenedor');
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>Clonando Ando</h1>
+    </div>
+    <div class="contendor2">
+
+    </div>
+</body>
+
+</html>
