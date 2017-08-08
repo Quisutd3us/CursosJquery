@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Agregando contenido</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- llamando jquery -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <script></script>
+</head>
+
+<body>
+    <section>
+        <article>
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p><span class="antes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At possimus optio, dolorum quia nihil eveniet, voluptatum aliquid necessitatibus repudiandae laudantium non nostrum eaque qui porro cumque repellat corporis incidunt neque. Debitis sapiente eius id, recusandae similique, suscipit ratione omnis officiis eligendi tenetur, quas quibusdam pariatur. Adipisci aliquam quidem dolore pariatur.</span></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus perspiciatis vero, libero ad quis itaque,
+                nam repellendus, vitae dignissimos dolor alias. Provident nisi voluptate quia accusamus facere, unde possimus
+                nulla sed est reiciendis ullam deleniti, rerum, et blanditiis voluptatem maiores quod adipisci rem voluptatum.
+                Obcaecati soluta, doloremque molestias nihil aspernatur.</p>
+            <p><span class="antes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laudantium ullam sapiente, quam eius possimus!</span></p>
+            <!-- agregar contenido al article -->
+
+            <script>
+                $('article').append('<p>Agregando contenido con append</p>');
+            </script>
+            <!-- seleccionar el primer parrafo y antes de el añada un mensaje -->
+            <script>
+                $('article').children('p').first().prepend('<p><strong>Añadiendo un mensaje con prepend</strong></p>')
+            </script>
+            <!-- seleccionar el ultimo parrafo no creado por Jquery y despues de el añada un mensaje -->
+
+            <script>
+                $('article').find('p:eq(2)').append('<p><strong>Agregando parrafo ejercicio 4</strong></p>')
+            </script>
+
+            <!-- crear un elemento H2 y añadalo al body -->
+            <script>
+                $('<h2>crear un elemento H2 y añadalo al body</h2>').appendTo('body')
+            </script>
+            <!-- crear un elemento H1 y añadalo al body antes del elemento H2 del ejercicio inicial -->
+            <script>
+                $('<h1>crear un elemento H1 y añadalo al body antes del elemento H2 del ejercicio inicial</h1>').prependTo(
+                    'article');
+            </script>
+
+            <!-- Crear una etqueta code despues del h2 recientemente creado, 
+                    agregele un texo q diga Hola mundo una clase de nombre miClase y que el color sea rosado -->
+            <script>
+                $('<code></code>',{
+                        text:' Hola Mundo con un texo q diga Hola mundo una clase de nombre miClase y que el color sea rosado ',
+                        class: 'miClase',
+                        style: 'color: red'
+                    }
+                ).appendTo('body h2:eq(1)')
+            </script>
+            <!-- recorra los span y agregue el texto Agregado Desde jquery -->
+            <script>
+                $('span.antes').each(function(){
+                    $(this).closest('p').prepend('Agregado Desde jquery al inicio')
+                });
+
+                $('span.antes').each(function(){
+                    $(this).append('Agregado Desde jquery al final');
+                })
+            </script>
+
+        </article>
+    </section>
+</body>
+
+</html>
