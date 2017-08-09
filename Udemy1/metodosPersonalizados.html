@@ -51,14 +51,19 @@
                 return $(this).animate({
                     'height': '5rem',
                     'width': '5rem',
-                    'font-size':'1rem'
-                },speed,fn)
+                    'font-size': '1rem'
+                }, speed, fn)
             }
 
             $('.ejercicio1').on('click', function () {
-                cuadro.animandoCuadro(1500, function(){
-                    cuadro.text("")
-                    cuadro.append('Funciono')                   
+                cuadro.animandoCuadro(1500, function () {
+                    cuadro.animate({
+                        'height': '10rem',
+                        'width': '10rem',
+                        'font-size': '1.5rem'
+                    })
+                    cuadro.text('')
+                    cuadro.append('Funciono')
                 });
             })
         })
