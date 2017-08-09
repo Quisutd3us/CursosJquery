@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,44 @@
     <title>Imprimiendo en el Body</title>
     <!-- importando jQuery -->
     <script src="js/jquery-3.2.1.js"></script>
-    
-</head>
-<body>
     <script>
+        $(function () {
+            var miDiccionario = [{
+                    titulo: "Este es el titulo 1",
+                    contenido: "Este es el contenido 1"
+                },
+                {
+                    titulo: "Este es el titulo 2",
+                    contenido: "Este es el contenido 2"
+                },
+                {
+                    titulo: "Este es el titulo 3",
+                    contenido: "Este es el contenido 3"
+                },
+                {
+                    titulo: "Este es el titulo 4",
+                    contenido: "Este es el contenido 4"
+                },
+            ]
+            template = $.trim($('#plantilla').html())
+            $.each(miDiccionario, function (index, miObj) {
+                var temp = 
+                template.replace(/{{titulo}}/, miObj.titulo).replace(/{{contenido}}/, miObj.contenido)
+                console.log(temp)
+                $(document.body).append(temp)
+            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+    <script id="plantilla" type="plantilla">
         <h1>{{titulo}}</h1>
         <p>{{contenido}}</p>
     </script>
-    
+
 </body>
+
 </html>
