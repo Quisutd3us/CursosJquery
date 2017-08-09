@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mastering Each</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#ejercicio1').on('click', function () {
+                $('*').removeAttr('style')
+                $('p').each(function () {
+                    $(this).css({
+                        'background-color': '#3c3c3c',
+                        'color': 'white'
+                    })
+                })
+            })
+
+            $('#ejercicio2').click(function () {
+                $('*').removeAttr('style')
+                $('p').each(function (i) {
+                    if (i === 3) {
+                        $(this).css({
+                            'background-color': '#3c3c3c',
+                            'color': 'pink'
+                        })
+                    }
+                })
+            })
+
+            $('#ejercicio3').click(function () {
+                var miObjeto = {
+                    nombre: 'david',
+                    apellido: 'nariño',
+                    edad: '23',
+                    nacionalidad: 'colombia'
+                }
+                var miTopo = 0;
+
+                $('p').each(function(){
+                    $(this).text('')
+                })
+                $.each(miObjeto, function (k, v) {
+                    console.log(k + ' : ' + v)
+                    $('article p:eq('+ miTopo + ')').append(k + ' : ' + v)
+                    miTopo++
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <section>
+        <article>
+            <p>item1</p>
+            <p>item2</p>
+            <p>item3</p>
+            <p>item4</p>
+            <p>item5</p>
+            <p>item6</p>
+            <p>item7</p>
+            <p>item8</p>
+            <p>item9</p>
+            <p>item10</p>
+        </article>
+    </section>
+    <section>
+        <button id="ejercicio1" title="Seleccionar todos los P y cambiar su estilo">ejercicio1</button>
+        <button id="ejercicio2" title="seleccionar el 4 p usando el metodo each">ejercicio2</button>
+        <button id="ejercicio3" title="Cear un array ,recorrerlo e imprimirlo en consola con el metodo each">ejercicio3</button>
+    </section>
+</body>
+
+</html>
